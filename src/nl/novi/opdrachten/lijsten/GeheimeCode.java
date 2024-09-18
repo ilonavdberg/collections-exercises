@@ -14,6 +14,9 @@ public class GeheimeCode {
         laResistanceMembers = addMembers(laResistanceMembers, "Henrie");
         laResistanceMembers = addMembers(laResistanceMembers, "Piet");
         laResistanceMembers = addMembers(laResistanceMembers, "LeDroitCestMoi");
+        laResistanceMembers = addMembers(laResistanceMembers, "Arie");
+
+        System.out.println(laResistanceMembers);
 
         /*
         Opdracht 1: Hierboven zijn via de methode addMembers, leden aan de lijst toegevoegd. Pas de Methode zo aan dat
@@ -37,6 +40,12 @@ public class GeheimeCode {
     }
 
     private static List<String> addMembers(List<String> members, String name) {
+        for (String member : members) {
+            if (member.equals(name)) {
+                System.out.println("Name already exists! Cannot be added.");
+                return members;
+            }
+        }
         members.add(name);
         return members;
     }
